@@ -9,6 +9,15 @@ We use an ESP-32 and a JSN-SR04T module to measure the height of water in a rain
 ESPHome is very useful to control the ESP32 and expose the information it offers in Home Assistant
 ![image](https://github.com/Coroebus/-HA-tank-level/assets/11136092/2bf8b717-9ec3-4dcf-850f-32a56e1f75a3)
 
+We use node-red to filter extreme data and convert it into useful data
+![image](https://github.com/Coroebus/-HA-tank-level/assets/11136092/4f66bfd4-a9c3-4368-82d2-c06ff72c8c60)
+
+Outlier Node allows you to exclude extreme data and gives the median value of the measurements. This makes it possible to smooth out variations and eliminate measurement errors.
+![image](https://github.com/Coroebus/-HA-tank-level/assets/11136092/2541c607-ab96-4199-a77f-96193d7efe07)
+
+Tank Volume Node allows you to know how much liquid is present in the tank depending on its shape, its dimensions and the height of the water. You have to download it here https://flows.nodered.org/node/node-red-contrib-tank-volume
+![image](https://github.com/Coroebus/-HA-tank-level/assets/11136092/927b0565-80e3-4936-93d4-f1d6e519d856)
+
 
 Another interesting piece of information to have when you have a rainwater tank and a pump is the temperature near the pump because in the event of frost, it can be damaged.
 ![image](https://github.com/Coroebus/-HA-tank-level/assets/11136092/18b20d2a-489e-41b8-9c6e-0b13dbec9eec)
