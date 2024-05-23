@@ -1,0 +1,52 @@
+esphome:
+  name: pompe
+  friendly_name: Pompe
+
+esp32:
+  board: esp32dev
+  framework:
+    type: arduino
+
+ethernet:
+  type: LAN8720
+  mdc_pin: GPIO23
+  mdio_pin: GPIO18
+  clk_mode: GPIO17_OUT
+  phy_addr: 0
+  power_pin: GPIO12
+
+
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  encryption:
+    key: "XXXXXXXXXXXXXXXXXXXXXXXXX"
+
+ota:
+  password: "XXXXXXXXXXXXXXXXXXXXXXXXXX"
+
+dallas:
+ - pin: GPIO14
+
+sensor:
+ - platform: dallas
+   address: 0x8f33ca4b0b646128
+   name: "Température Boitier Pompe"
+
+ - platform: dallas
+   address: 0x4e3ce1e3806faf28
+   name: "Température abri pompe"
+
+ - platform: ultrasonic
+   trigger_pin: GPIO13
+   echo_pin: GPIO16
+   name: cuve_distance
+   update_interval: 60s
+   accuracy_decimals: 3
+   unit_of_measurement: m
+   pulse_time: 85us
+
+
