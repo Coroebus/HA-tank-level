@@ -1,4 +1,4 @@
-# -HA-tank-level
+# HA-tank-level
 Tank level measurement solution for Home Assistant
 
 ![image](https://github.com/Coroebus/-HA-tank-level/assets/11136092/ab5d5e14-226a-49a2-b550-33a9459d45ca)
